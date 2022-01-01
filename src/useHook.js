@@ -1,4 +1,4 @@
-import Hook from './assets/js/hook'
+import Hook from './hook'
 import { getCurrentInstance, onBeforeUnmount } from 'vue'
 
 export const hook = new Hook()
