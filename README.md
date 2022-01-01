@@ -1,17 +1,17 @@
 # @crazydos/vue-use-hook
 use event to manage your modules & components state
 
-## why
+## Why
 There are situations that I need reset or change a lots of state of modules and components, or make some action, for user's input. How do you manage these changes ? I see someone put all these changes in one modules function, I can't understand each module or component in what state in "the time". I want to know each modules / components change in any time, or like I said , event.
 This module try to help someone who want know all changes in any time of a module or component.
 
 Maybe, it's just a EventBus.
 
-## install
+## Install
 
-`npm install vue-use-hook`
+`npm install @crazydos/vue-use-hook`
 
-## usage
+## Usage
 ```vue
 <script>
 // itemCounter.vue
@@ -79,5 +79,5 @@ registHook({
 
 Manage state with timeline.
 
-## documentation
+## Documentation
 ...coming soon

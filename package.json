@@ -1,6 +1,6 @@
 {
   "name": "@crazydos/vue-use-hook",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "vue-use-hook use event to manage your module's change",
   "main": "src/index.js",
   "homepage": "https://github.com/shunnNet/vue-use-hook",
