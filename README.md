@@ -12,6 +12,24 @@ Maybe, it's just a EventBus.
 `npm install @crazydos/vue-use-hook`
 
 ## Usage
+
+First, you must declare hook you want to use in your application.
+
+```javascript
+// main.js
+import {hook} from "@crazydos/vue-use-hook"
+
+hook.declareHook([
+  "clickA"
+])
+
+hook.log = process.env.NODE_ENV !== "production"
+// optionally open logger for debugging
+
+```
+
+And you can use hook in your application
+
 ```vue
 <script>
 // itemCounter.vue
@@ -75,6 +93,9 @@ registHook({
     itemCount.value = 0
   }
 }, "itemCounter")
+
+// second parameter name : "itemCounter" is required for unregisteration 
+
 ```
 
 Manage state with timeline.
