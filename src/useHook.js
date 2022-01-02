@@ -1,18 +1,18 @@
-import Hook from './hook'
-import { getCurrentInstance, onBeforeUnmount } from 'vue'
+import Hook from "./hook"
+import { getCurrentInstance, onBeforeUnmount } from "vue"
 
 export const hook = new Hook()
 
 export function registHook(options, name, order = 1) {
   Object.entries(options).forEach(([event, handler]) => {
-    if (typeof handler === 'function') {
+    if (typeof handler === "function") {
       hook.on(event, {
         order,
         name,
         callback: handler,
       })
     }
-    if (typeof handler === 'object') {
+    if (typeof handler === "object") {
       hook.on(event, {
         order: options.order || order,
         name: name,
@@ -26,10 +26,11 @@ export function unRegistHook(hookName, name) {
 }
 
 export function useHook(options, order = 1, vm = getCurrentInstance()) {
-  registHook(options, vm._uid, order)
+  const name = vm.ctx.$options.name ? vm.ctx.$options.name : vm.uid
+  registHook(options, name, order)
   onBeforeUnmount(() => {
     Object.entries(options).forEach(([event, handler]) => {
-      unRegistHook(event, vm._uid)
+      unRegistHook(event, name)
     })
   })
 }
@@ -37,7 +38,7 @@ export function useTrigger(options) {
   const result = {}
   Object.entries(options).forEach(([event, value]) => {
     result[event] = (val) => {
-      hook.emit(event, typeof value === 'function' ? value(val) : value)
+      hook.emit(event, typeof value === "function" ? value(val) : value)
     }
   })
   return result
