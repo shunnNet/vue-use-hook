@@ -20,7 +20,7 @@
     "vue-hook",
     "hook"
   ],
-  "author": "shunnNet",
+  "author": "shunnNet <wendell20904102@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "vue": "^3.2.26"
