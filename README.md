@@ -20,7 +20,8 @@ First, you must declare hook you want to use in your application.
 import {hook} from "@crazydos/vue-use-hook"
 
 hook.declareHook([
-  "clickA"
+  "userChooseItem",
+  "userUnChooseItem"
 ])
 
 hook.log = process.env.NODE_ENV !== "production"
